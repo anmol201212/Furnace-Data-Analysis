@@ -1,0 +1,688 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>2341</width>
+    <height>1006</height>
+   </rect>
+  </property>
+  <property name="font">
+   <font>
+    <weight>75</weight>
+    <bold>true</bold>
+   </font>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">background-color: #333333;</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QFrame" name="Header">
+    <property name="geometry">
+     <rect>
+      <x>150</x>
+      <y>30</y>
+      <width>321</width>
+      <height>61</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, stop:0 rgba(240, 128, 128, 150), stop:0.98 rgba(233, 160, 122, 150));
+
+text-align: center;
+</string>
+    </property>
+    <property name="frameShape">
+     <enum>QFrame::StyledPanel</enum>
+    </property>
+    <property name="frameShadow">
+     <enum>QFrame::Sunken</enum>
+    </property>
+    <widget class="QLabel" name="label">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>10</y>
+       <width>281</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>Arial Black</family>
+       <pointsize>14</pointsize>
+       <weight>75</weight>
+       <italic>false</italic>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">color: rgb(255, 255, 255);
+background-color: transparent;
+
+</string>
+     </property>
+     <property name="text">
+      <string>Model Training</string>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QPushButton" name="bt_selectFile">
+    <property name="geometry">
+     <rect>
+      <x>40</x>
+      <y>370</y>
+      <width>571</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Arial</family>
+      <pointsize>12</pointsize>
+      <weight>75</weight>
+      <italic>false</italic>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">color: rgb(255, 255, 255);
+background-color:#778899;
+padding-left: 5px;
+text-align: left;</string>
+    </property>
+    <property name="text">
+     <string>Select training data</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pTest">
+    <property name="geometry">
+     <rect>
+      <x>40</x>
+      <y>700</y>
+      <width>571</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Arial</family>
+      <pointsize>12</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">color: rgb(255, 255, 255);
+background-color:#778899;
+text-align: left;
+padding-left: 5px;</string>
+    </property>
+    <property name="text">
+     <string>Statistics</string>
+    </property>
+   </widget>
+   <widget class="QTableWidget" name="tableWidget">
+    <property name="geometry">
+     <rect>
+      <x>40</x>
+      <y>400</y>
+      <width>571</width>
+      <height>291</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Arial</family>
+      <pointsize>10</pointsize>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">color: rgb(255, 255, 255);
+background-color: rgb(0,0,0,100);
+</string>
+    </property>
+    <property name="showGrid">
+     <bool>false</bool>
+    </property>
+    <attribute name="horizontalHeaderVisible">
+     <bool>false</bool>
+    </attribute>
+    <attribute name="verticalHeaderVisible">
+     <bool>false</bool>
+    </attribute>
+   </widget>
+   <widget class="QTextEdit" name="textEdit_describe">
+    <property name="geometry">
+     <rect>
+      <x>40</x>
+      <y>730</y>
+      <width>571</width>
+      <height>231</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>10</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(47,79,79,100);
+color: rgb(255, 255, 255);</string>
+    </property>
+   </widget>
+   <widget class="QWidget" name="Statwidget" native="true">
+    <property name="geometry">
+     <rect>
+      <x>620</x>
+      <y>400</y>
+      <width>571</width>
+      <height>291</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(128,128,128,150);</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_2">
+    <property name="geometry">
+     <rect>
+      <x>40</x>
+      <y>10</y>
+      <width>91</width>
+      <height>81</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="pixmap">
+     <pixmap>logo3.png</pixmap>
+    </property>
+    <property name="scaledContents">
+     <bool>true</bool>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_3">
+    <property name="geometry">
+     <rect>
+      <x>70</x>
+      <y>230</y>
+      <width>631</width>
+      <height>611</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="pixmap">
+     <pixmap>Images/AI1.png</pixmap>
+    </property>
+    <property name="scaledContents">
+     <bool>false</bool>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="bt_cleandata">
+    <property name="geometry">
+     <rect>
+      <x>620</x>
+      <y>40</y>
+      <width>221</width>
+      <height>51</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Arial</family>
+      <pointsize>12</pointsize>
+      <weight>75</weight>
+      <italic>false</italic>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">color: #000000;
+background-color:rgb(128,128,0,150);
+padding-left: 5px;
+text-align: center;</string>
+    </property>
+    <property name="text">
+     <string>Clean data</string>
+    </property>
+    <property name="icon">
+     <iconset>
+      <normaloff>C:/Users/114012/Downloads/icons8-clean-100.png</normaloff>C:/Users/114012/Downloads/icons8-clean-100.png</iconset>
+    </property>
+    <property name="iconSize">
+     <size>
+      <width>30</width>
+      <height>30</height>
+     </size>
+    </property>
+   </widget>
+   <widget class="QWidget" name="Chart_Scatter" native="true">
+    <property name="geometry">
+     <rect>
+      <x>620</x>
+      <y>730</y>
+      <width>571</width>
+      <height>231</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(128,128,128,150);</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_4">
+    <property name="geometry">
+     <rect>
+      <x>620</x>
+      <y>370</y>
+      <width>571</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Arial</family>
+      <pointsize>12</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">border-style: solid;
+border-width: 1px;
+border-color: rgb(0,128,128,120);
+color: rgb(255, 255, 255);
+background-color: rgb(0,128,128,90);</string>
+    </property>
+    <property name="text">
+     <string>Z-score ( standard deviations )</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_5">
+    <property name="geometry">
+     <rect>
+      <x>620</x>
+      <y>700</y>
+      <width>571</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Arial</family>
+      <pointsize>12</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">border-style: solid;
+border-width: 1px;
+border-color: rgb(0,128,128,120);
+color: rgb(255, 255, 255);
+background-color: rgb(0,128,128,90);</string>
+    </property>
+    <property name="text">
+     <string>Standard analysis of input data</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_6">
+    <property name="geometry">
+     <rect>
+      <x>1200</x>
+      <y>370</y>
+      <width>571</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Arial</family>
+      <pointsize>12</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">border-style: solid;
+border-width: 1px;
+border-color: rgb(0,128,128,120);
+color: rgb(255, 255, 255);
+background-color: rgb(0,128,128,90);</string>
+    </property>
+    <property name="text">
+     <string>Z-score (standard deviations after data cleaning)</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_7">
+    <property name="geometry">
+     <rect>
+      <x>1200</x>
+      <y>700</y>
+      <width>571</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Arial</family>
+      <pointsize>12</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">border-style: solid;
+border-width: 1px;
+border-color: rgb(0,128,128,120);
+color: rgb(255, 255, 255);
+background-color: rgb(0,128,128,90);</string>
+    </property>
+    <property name="text">
+     <string>Standard analysis after data cleaning</string>
+    </property>
+   </widget>
+   <widget class="QWidget" name="StatwidgetAfterFilter" native="true">
+    <property name="geometry">
+     <rect>
+      <x>1200</x>
+      <y>400</y>
+      <width>571</width>
+      <height>291</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(128,128,128,150);</string>
+    </property>
+   </widget>
+   <widget class="QWidget" name="Chart_Scatter_Afterfilter" native="true">
+    <property name="geometry">
+     <rect>
+      <x>1200</x>
+      <y>730</y>
+      <width>571</width>
+      <height>231</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(128,128,128,150);</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_8">
+    <property name="geometry">
+     <rect>
+      <x>800</x>
+      <y>230</y>
+      <width>841</width>
+      <height>601</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="pixmap">
+     <pixmap>Images/AI2.png</pixmap>
+    </property>
+    <property name="scaledContents">
+     <bool>true</bool>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="bt_cleandata_2">
+    <property name="geometry">
+     <rect>
+      <x>970</x>
+      <y>40</y>
+      <width>221</width>
+      <height>51</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Arial</family>
+      <pointsize>12</pointsize>
+      <weight>75</weight>
+      <italic>false</italic>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">color: #000000;
+background-color:rgb(128,128,0,150);
+padding-left: 5px;
+text-align: center;</string>
+    </property>
+    <property name="text">
+     <string>Train Model</string>
+    </property>
+    <property name="icon">
+     <iconset>
+      <normaloff>C:/Users/114012/Downloads/icons8-clean-100.png</normaloff>C:/Users/114012/Downloads/icons8-clean-100.png</iconset>
+    </property>
+    <property name="iconSize">
+     <size>
+      <width>30</width>
+      <height>30</height>
+     </size>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="bt_PredPage">
+    <property name="geometry">
+     <rect>
+      <x>1200</x>
+      <y>40</y>
+      <width>221</width>
+      <height>51</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Arial</family>
+      <pointsize>12</pointsize>
+      <weight>75</weight>
+      <italic>false</italic>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">color: #000000;
+background-color:rgb(128,128,0,150);
+padding-left: 5px;
+text-align: center;</string>
+    </property>
+    <property name="text">
+     <string>Prediction</string>
+    </property>
+    <property name="icon">
+     <iconset>
+      <normaloff>Images/Prediction2.png</normaloff>Images/Prediction2.png</iconset>
+    </property>
+    <property name="iconSize">
+     <size>
+      <width>35</width>
+      <height>35</height>
+     </size>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="bt_AnalysisPage">
+    <property name="geometry">
+     <rect>
+      <x>1550</x>
+      <y>40</y>
+      <width>221</width>
+      <height>51</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Arial</family>
+      <pointsize>12</pointsize>
+      <weight>75</weight>
+      <italic>false</italic>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">color: #000000;
+background-color:rgb(128,128,0,150);
+padding-left: 5px;
+text-align: center;</string>
+    </property>
+    <property name="text">
+     <string>Analysis</string>
+    </property>
+    <property name="icon">
+     <iconset>
+      <normaloff>Images/predictive-analysis.png</normaloff>Images/predictive-analysis.png</iconset>
+    </property>
+    <property name="iconSize">
+     <size>
+      <width>35</width>
+      <height>35</height>
+     </size>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_9">
+    <property name="geometry">
+     <rect>
+      <x>700</x>
+      <y>110</y>
+      <width>571</width>
+      <height>251</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="pixmap">
+     <pixmap>Images/Furnace/Fur.jpg</pixmap>
+    </property>
+    <property name="scaledContents">
+     <bool>true</bool>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+    <property name="margin">
+     <number>0</number>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_10">
+    <property name="geometry">
+     <rect>
+      <x>40</x>
+      <y>110</y>
+      <width>651</width>
+      <height>251</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="pixmap">
+     <pixmap>Images/Furnace/fun2.png</pixmap>
+    </property>
+    <property name="scaledContents">
+     <bool>true</bool>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+    <property name="margin">
+     <number>0</number>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_11">
+    <property name="geometry">
+     <rect>
+      <x>1280</x>
+      <y>110</y>
+      <width>491</width>
+      <height>251</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="pixmap">
+     <pixmap>Images/Furnace/fur5.jpg</pixmap>
+    </property>
+    <property name="scaledContents">
+     <bool>true</bool>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+    <property name="margin">
+     <number>0</number>
+    </property>
+   </widget>
+   <zorder>label_8</zorder>
+   <zorder>label_3</zorder>
+   <zorder>Header</zorder>
+   <zorder>bt_selectFile</zorder>
+   <zorder>pTest</zorder>
+   <zorder>tableWidget</zorder>
+   <zorder>textEdit_describe</zorder>
+   <zorder>label_2</zorder>
+   <zorder>bt_cleandata</zorder>
+   <zorder>Chart_Scatter</zorder>
+   <zorder>label_4</zorder>
+   <zorder>label_5</zorder>
+   <zorder>label_6</zorder>
+   <zorder>label_7</zorder>
+   <zorder>StatwidgetAfterFilter</zorder>
+   <zorder>Chart_Scatter_Afterfilter</zorder>
+   <zorder>Statwidget</zorder>
+   <zorder>bt_cleandata_2</zorder>
+   <zorder>bt_PredPage</zorder>
+   <zorder>bt_AnalysisPage</zorder>
+   <zorder>label_9</zorder>
+   <zorder>label_10</zorder>
+   <zorder>label_11</zorder>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>2341</width>
+     <height>26</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+ </widget>
+ <resources/>
+ <connections>
+  <connection>
+   <sender>bt_selectFile</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>select_csv()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>98</x>
+     <y>181</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>169</x>
+     <y>177</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+ <slots>
+  <slot>select_csv()</slot>
+ </slots>
+</ui>

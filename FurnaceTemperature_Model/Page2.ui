@@ -1,0 +1,434 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1868</width>
+    <height>988</height>
+   </rect>
+  </property>
+  <property name="font">
+   <font>
+    <weight>75</weight>
+    <bold>true</bold>
+   </font>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">background-color: #333333;</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QWidget" name="Wid_Dataselected" native="true">
+    <property name="geometry">
+     <rect>
+      <x>60</x>
+      <y>160</y>
+      <width>741</width>
+      <height>381</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(128,128,128,150);</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_2">
+    <property name="geometry">
+     <rect>
+      <x>40</x>
+      <y>10</y>
+      <width>91</width>
+      <height>81</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="pixmap">
+     <pixmap>logo3.png</pixmap>
+    </property>
+    <property name="scaledContents">
+     <bool>true</bool>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_3">
+    <property name="geometry">
+     <rect>
+      <x>70</x>
+      <y>230</y>
+      <width>631</width>
+      <height>611</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="pixmap">
+     <pixmap>Images/AI1.png</pixmap>
+    </property>
+    <property name="scaledContents">
+     <bool>false</bool>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="bt_selectFile">
+    <property name="geometry">
+     <rect>
+      <x>230</x>
+      <y>10</y>
+      <width>301</width>
+      <height>81</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Arial</family>
+      <pointsize>14</pointsize>
+      <weight>75</weight>
+      <italic>false</italic>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">color: #000000;
+background-color:rgb(128,128,0,150);
+padding-left: 5px;
+text-align: center;</string>
+    </property>
+    <property name="text">
+     <string>  Select file</string>
+    </property>
+    <property name="icon">
+     <iconset>
+      <normaloff>Images/Fileselect.png</normaloff>Images/Fileselect.png</iconset>
+    </property>
+    <property name="iconSize">
+     <size>
+      <width>50</width>
+      <height>50</height>
+     </size>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_4">
+    <property name="geometry">
+     <rect>
+      <x>60</x>
+      <y>130</y>
+      <width>741</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Arial</family>
+      <pointsize>12</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">border-style: solid;
+border-width: 1px;
+border-color: rgb(0,128,128,120);
+color: rgb(255, 255, 255);
+background-color: rgb(0,128,128,90);</string>
+    </property>
+    <property name="text">
+     <string>Data selected for Prediction</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_6">
+    <property name="geometry">
+     <rect>
+      <x>1020</x>
+      <y>130</y>
+      <width>741</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Arial</family>
+      <pointsize>12</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">border-style: solid;
+border-width: 1px;
+border-color: rgb(0,128,128,120);
+color: rgb(255, 255, 255);
+background-color: rgb(0,128,128,90);</string>
+    </property>
+    <property name="text">
+     <string>Predictions of all models</string>
+    </property>
+   </widget>
+   <widget class="QWidget" name="Wid_PredictionChart" native="true">
+    <property name="geometry">
+     <rect>
+      <x>1020</x>
+      <y>160</y>
+      <width>741</width>
+      <height>371</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(128,128,128,150);</string>
+    </property>
+   </widget>
+   <widget class="QWidget" name="Wid_PredictionChart2" native="true">
+    <property name="geometry">
+     <rect>
+      <x>1020</x>
+      <y>590</y>
+      <width>741</width>
+      <height>351</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(128,128,128,150);</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_8">
+    <property name="geometry">
+     <rect>
+      <x>990</x>
+      <y>220</y>
+      <width>841</width>
+      <height>601</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="pixmap">
+     <pixmap>Images/AI2.png</pixmap>
+    </property>
+    <property name="scaledContents">
+     <bool>true</bool>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="bt_predict">
+    <property name="geometry">
+     <rect>
+      <x>670</x>
+      <y>10</y>
+      <width>301</width>
+      <height>81</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Arial</family>
+      <pointsize>14</pointsize>
+      <weight>75</weight>
+      <italic>false</italic>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">color: #000000;
+background-color:rgb(128,128,0,150);
+padding-left: 5px;
+text-align: center;</string>
+    </property>
+    <property name="text">
+     <string>Predict Natural
+ Gas Consumption</string>
+    </property>
+    <property name="icon">
+     <iconset>
+      <normaloff>Images/Prediction.png</normaloff>Images/Prediction.png</iconset>
+    </property>
+    <property name="iconSize">
+     <size>
+      <width>50</width>
+      <height>50</height>
+     </size>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="bt_Mainpage">
+    <property name="geometry">
+     <rect>
+      <x>1500</x>
+      <y>10</y>
+      <width>301</width>
+      <height>81</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Arial</family>
+      <pointsize>14</pointsize>
+      <weight>75</weight>
+      <italic>false</italic>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">color: #000000;
+background-color:rgb(128,128,0,150);
+padding-left: 5px;
+text-align: center;</string>
+    </property>
+    <property name="text">
+     <string>  Main Page</string>
+    </property>
+    <property name="icon">
+     <iconset>
+      <normaloff>Images/GoBack.png</normaloff>Images/GoBack.png</iconset>
+    </property>
+    <property name="iconSize">
+     <size>
+      <width>50</width>
+      <height>50</height>
+     </size>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="bt_predict_Cokeoven">
+    <property name="geometry">
+     <rect>
+      <x>1090</x>
+      <y>10</y>
+      <width>301</width>
+      <height>81</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Arial</family>
+      <pointsize>14</pointsize>
+      <weight>75</weight>
+      <italic>false</italic>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">color: #000000;
+background-color:rgb(128,128,0,150);
+padding-left: 5px;
+text-align: center;</string>
+    </property>
+    <property name="text">
+     <string>Predict CokeOven 
+Gas Consumption</string>
+    </property>
+    <property name="icon">
+     <iconset>
+      <normaloff>Images/Prediction.png</normaloff>Images/Prediction.png</iconset>
+    </property>
+    <property name="iconSize">
+     <size>
+      <width>50</width>
+      <height>50</height>
+     </size>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_5">
+    <property name="geometry">
+     <rect>
+      <x>60</x>
+      <y>560</y>
+      <width>741</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Arial</family>
+      <pointsize>12</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">border-style: solid;
+border-width: 1px;
+border-color: rgb(0,128,128,120);
+color: rgb(255, 255, 255);
+background-color: rgb(0,128,128,90);</string>
+    </property>
+    <property name="text">
+     <string>Rate of change in selected data</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_7">
+    <property name="geometry">
+     <rect>
+      <x>1020</x>
+      <y>560</y>
+      <width>741</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Arial</family>
+      <pointsize>12</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">border-style: solid;
+border-width: 1px;
+border-color: rgb(0,128,128,120);
+color: rgb(255, 255, 255);
+background-color: rgb(0,128,128,90);</string>
+    </property>
+    <property name="text">
+     <string>Average of model predictions</string>
+    </property>
+   </widget>
+   <widget class="QWidget" name="Wid_Rateofchange" native="true">
+    <property name="geometry">
+     <rect>
+      <x>60</x>
+      <y>590</y>
+      <width>741</width>
+      <height>401</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(128,128,128,150);</string>
+    </property>
+   </widget>
+   <zorder>label_8</zorder>
+   <zorder>label_3</zorder>
+   <zorder>label_2</zorder>
+   <zorder>bt_selectFile</zorder>
+   <zorder>label_4</zorder>
+   <zorder>label_6</zorder>
+   <zorder>Wid_PredictionChart</zorder>
+   <zorder>Wid_PredictionChart2</zorder>
+   <zorder>Wid_Dataselected</zorder>
+   <zorder>bt_predict</zorder>
+   <zorder>bt_Mainpage</zorder>
+   <zorder>bt_predict_Cokeoven</zorder>
+   <zorder>label_5</zorder>
+   <zorder>label_7</zorder>
+   <zorder>Wid_Rateofchange</zorder>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>1868</width>
+     <height>21</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+ </widget>
+ <resources/>
+ <connections/>
+ <slots>
+  <slot>select_csv()</slot>
+ </slots>
+</ui>
