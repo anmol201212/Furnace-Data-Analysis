@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Furnace Data</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+
+  <style>
+    body {
+        overflow-y: auto;
+    }
+
+    .container {
+        padding-top: 20px;
+        padding-bottom: 20px;
+    }
+
+    .nav-tabs {
+        justify-content: center;
+    }
+
+    .data-table-container {
+        width: 48%; /* Adjust width as needed */
+        max-height: 250px;
+        overflow-y: auto;
+        border: 1px solid #ccc;
+        float: left; /* Float left to align horizontally */
+        margin-right: 2%; /* Margin between tables */
+    }
+
+    .second-data-table-container {
+        width: 48%; /* Adjust width as needed */
+        max-height: 250px;
+        overflow-y: auto;
+        border: 1px solid #ccc;
+        float: left; /* Float left to align horizontally */
+    }
+
+    .data-table,
+    .second-data-table {
+        width: 100%;
+    }
+
+    .screen1barchart {
+        clear: both; /* Clear floating elements */
+        margin-top: 20px; /* Adjust margin as needed */
+        text-align: center; /* Center horizontally */
+    }
+</style>
+
+</head>
+<body>
+  <div class="container">
+    <ul class="nav nav-tabs" id="myTab" role="tablist">
+      <li class="nav-item">
+        <a class="nav-link active" id="screen1-tab" data-toggle="tab" href="#screen1" role="tab" aria-controls="screen1" aria-selected="true">Screen 1</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" id="screen2-tab" data-toggle="tab" href="#screen2" role="tab" aria-controls="screen2" aria-selected="false">Screen 2</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" id="screen3-tab" data-toggle="tab" href="#screen3" role="tab" aria-controls="screen3" aria-selected="false">Screen 3</a>
+      </li>
+    </ul>
+    <div class="tab-content" id="myTabContent">
+      <div class="tab-pane fade show active" id="screen1" role="tabpanel" aria-labelledby="screen1-tab">
+        <!-- Screen 1 Content -->
+        <div>
+          <input type="file" id="fileInput" accept=".xlsx,.csv">
+          <button type="submit">Upload</button>
+        </div>
+        <div class="data-table-container">
+        
+            <table class="table table-bordered data-table">
+              <thead>
+                <tr>
+                  {% for header in csv_data[0] %}
+                    <th>{{ header }}</th>
+                  {% endfor %}
+                </tr>
+              </thead>
+              <tbody>
+                {% for row in csv_data[1:] %}
+                  <tr>
+                    {% for item in row %}
+                      <td>{{ item }}</td>
+                    {% endfor %}
+                  </tr>
+                {% endfor %}
+              </tbody>
+            </table>
+        </div>
+        <div class="second-data-table-container">
+            <table class="table table-bordered second-data-table">
+              <thead>
+                <tr>
+                  <th>Statistic</th>
+                    <th>PreHeatZone</th>
+                    <th>HeatZone1</th>
+                    <th>HeatZone2</th>
+                    <th>SockingZone</th>
+                </tr>
+              </thead>
+              <tbody>
+                {% for stat, values in statistics.items() %}
+                  <tr>
+                    <td>{{ stat }}</td>
+                    {% for value in values %}
+                      <td>{{ value }}</td>
+                    {% endfor %}
+                  </tr>
+                {% endfor %}
+              </tbody>
+            </table>
+        </div>
+        <!-- Chart container -->
+        <div class="screen1barchart" id="chart"></div>
+      </div>
+      <div class="tab-pane fade" id="screen2" role="tabpanel" aria-labelledby="screen2-tab">
+        <!-- Screen 2 Content -->
+        <h2>Screen 2 Content</h2>
+        <p>This is the content of Screen 2.</p>
+      </div>
+      <div class="tab-pane fade" id="screen3" role="tabpanel" aria-labelledby="screen3-tab">
+        <!-- Screen 3 Content -->
+        <h2>Screen 3 Content</h2>
+        <p>This is the content of Screen 3.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bootstrap JS, Popper.js, and jQuery -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+  <!-- Plotly -->
+  <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+
+  <!-- JavaScript for chart creation -->
+  <script>
+    // Ensure chart_data is defined and properly formatted
+    var chartData = JSON.parse('{{ chart_data | tojson | safe }}');
+
+    // Check if chartData is defined and contains necessary data
+    if (chartData && chartData.headers && chartData.labels && chartData.values) {
+        var colors = ['rgba(31, 119, 180, 0.7)', 'rgba(255, 127, 14, 0.7)', 'rgba(44, 160, 44, 0.7)', 'rgba(214, 39, 40, 0.7)'];
+        var traces = [];
+
+        for (var i = 0; i < chartData.headers.length; i++) {
+            for (var j = 0; j < chartData.labels.length; j++) {
+                var trace = {
+                    x: [chartData.labels[j]],
+                    y: [chartData.values[j][i]],
+                    type: 'bar',
+                    name: chartData.headers[i],
+                    marker: {
+                        color: colors[i]
+                    },
+                    width: 0.2
+                };
+                traces.push(trace);
+            }
+        }
+        console.log(traces);
+        traces.name = ['PreHeatZone', 'HeatZone1', 'HeatZone2', 'SockingZone'];
+
+        var layout = {
+            barmode: 'group',
+            xaxis: { title: 'Operation' },
+            yaxis: { title: 'Values' },
+            showlegend: true
+        };
+
+        Plotly.newPlot('chart', traces, layout);
+    }
+  </script>
+
+    
+  
+</body>
+</html>
